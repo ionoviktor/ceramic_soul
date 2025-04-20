@@ -2,9 +2,14 @@
 
 .works {
     padding-top: 60px;
+    padding-bottom: 95px;
 
     &__slider {
         margin-top: 40px;
+    }
+
+    &__wrapper {
+        position: relative;
     }
 
     .swiper-slide img {
@@ -60,9 +65,6 @@
 
 @media screen and (min-width: 1200px) {
     .works {
-        &__wrapper {
-            position: relative;
-        }
 
         &__slider {
             margin: 80px 40px 0 40px;

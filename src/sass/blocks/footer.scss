@@ -1,0 +1,97 @@
+@use '/src/sass/base/variables.scss' as *;
+
+.footer {
+    padding: 50px 0 50px 0;
+    background-color: $dark;
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $light;
+    }
+
+
+
+    &__newsletter {
+        &_text {
+            margin-top: 40px;
+            font-weight: 400;
+            font-size: 16px;
+            color: $light;
+        }
+
+        &_email {
+            margin-top: 40px;
+            width: 293px;
+            height: 32px;
+            background-color: $dark;
+            color: $ui-active;
+            border: none;
+            border-bottom: 1px solid $ui-active;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 14px;
+                color: $ui-active;
+            }
+
+            &:focus {
+                border: none;
+                outline: 1px solid $light;
+            }
+        }
+
+        &_checkbox {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 200%;
+            color: $light;
+
+            input {
+                position: relative;
+                appearance: none;
+                border: 1px solid $light;
+                border-radius: 2px;
+                width: 15px;
+                height: 15px;
+                margin-right: 15px;
+                background: $dark;
+
+                &::before {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    white-space: pre;
+                    content: " ";
+                }
+
+                &:checked::before {
+                    content: "\2713";
+                    color: $light;
+                    font-size: 12px;
+                }
+            }
+
+            a {
+                color: #a22dc6;
+                text-decoration: none;
+                margin-left: 3px;
+            }
+        }
+
+        &_btn {
+            margin-top: 20px;
+        }
+    }
+
+    &__links {
+        margin-top: 40px;
+        display: flex;
+        column-gap: 66px;
+    }
+}
