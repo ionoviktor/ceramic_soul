@@ -1,0 +1,165 @@
+@use '/src/sass/base/variables.scss' as *;
+
+.catalog {
+    padding-top: 50px;
+
+    &__title {
+        margin-top: 50px;
+    }
+
+    &__tabs {
+        display: flex;
+        column-gap: 50px;
+        row-gap: 13px;
+        flex-wrap: wrap;
+        margin-top: 60px;
+        border: 1px solid $dark;
+        padding: 13px 35px;
+    }
+
+    &__tab {
+        position: relative;
+        border: none;
+        background: none;
+        padding: 0;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+
+        &_active::before {
+            content: '';
+            position: absolute;
+            border: 1px solid #000;
+            width: 100%;
+            height: 0px;
+            bottom: -1px;
+        }
+    }
+
+    &__content {
+        margin-top: 60px;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    &__card {
+        width: 340px;
+        height: 100%;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+
+        &-img {
+            width: 340px;
+            height: 198px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-info {
+            align-items: start;
+            padding: 11px 12px;
+            border: 1px solid $dark;
+        }
+
+        &-name {
+            font-weight: 500;
+            font-size: 16px;
+            color: #000;
+        }
+
+        &-price {
+            margin-top: 7.7px;
+            font-weight: 500;
+            font-size: 16px;
+            color: #000;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .catalog {
+        &__tabs {
+            padding: 13px 25px;
+            max-width: 460px;
+        }
+
+        &__content {
+            padding: 10px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 1px solid $dark;
+                width: 200px;
+                height: 0px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100px;
+                left: -99px;
+                border: 1px solid $dark;
+                width: 200px;
+                height: 0px;
+                transform: rotate(-90deg);
+            }
+
+            &-item {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .catalog {
+        &__content {
+            padding: 25px;
+
+            &-item {
+                gap: 35px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .catalog {
+        &__title {
+            margin-top: 100px;
+        }
+
+        &__content {
+
+            &-item {
+                column-gap: 83px;
+                row-gap: 25px;
+            }
+        }
+
+        &__card {
+            width: 285px;
+
+            &-img {
+                width: 285px;
+                height: 180px;
+            }
+        }
+    }
+}
