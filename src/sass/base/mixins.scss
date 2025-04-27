@@ -21,3 +21,27 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+@mixin angle-decoration {
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $dark;
+        width: 200px;
+        height: 0px;
+    }
+
+    &::after {
+        width: 200px;
+        height: 0px;
+    }
+
+    &::before {
+        width: 0;
+        height: 200px;
+    }
+}
